@@ -1,0 +1,187 @@
+////////////////////////////////////////////////////////////////////////////////
+//                                                                            //
+// MRPODS -- Machine-Readable Printed Optical Data Sheets                     //
+// https://github.com/sheafdynamics/mrpods                                    //
+//                                                                            //
+// Copyright (c) 2024 Ray Doll                                                //
+// Copyright (c) 2007 Oleh Yuschuk                                            //
+//                                                                            //
+// This file is part of MRPODS, which is built off                            //
+// Oleh Yuschuk's PaperBack https://ollydbg.de/Paperbak/                      //
+// MRPODS is cumulative work of passionate programmers,                       //
+// both named and unnamed, including freelancers and private contractors.     //
+// Without them, this would not be possible.                                  //
+// This software contains Oleh Yuschuk's original comments and                //
+// comments from other maintainers.                                           //
+//                                                                            //
+// MRPODS is free software; you can redistribute it and/or modify it under    //
+// the terms of the GNU General Public License as published by the Free       //
+// Software Foundation; either version 3 of the License, or (at your option)  //
+// any later version.                                                         //
+//                                                                            //
+// MRPODS is distributed in the hope that it will be useful, but WITHOUT      //
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or      //
+// FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for   //
+// more details.                                                              //
+//                                                                            //
+// You should have received a copy of the GNU General Public License along    //
+// with this program. If not, see <http://www.gnu.org/licenses/>.             //
+//                                                                            //
+//                              bzip2 license                                 //
+// -------------------------------------------------------------------------- //
+// "bzip2", the associated library "libbzip2" copyright(C) 1996 - 2010        //
+// Julian R Seward. All rights reserved.                                      //
+// Julian Seward, jseward@acm.org                                             //
+// bzip2 / libbzip2 version 1.0.6 of 6 September 2010                         //
+//                                                                            //
+// -------------------------------------------------------------------------- //
+//                                                                            //
+////////////////////////////////////////////////////////////////////////////////
+
+#include "windows.h"
+
+#include "resource.h"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+// Edit the icon as needed, if you are building 32-bit release, use logox32.ico
+// If you are building 64-bit release, use logox64.ico
+// OS taskbar icon (HIDPI)
+IDI_ICON1               ICON                    "logo\\logox32.ico"
+// Title bar icon (tiny)
+ICON_MAIN               ICON                    "logo\\logox32.ico"
+
+// Legacy icon code
+// 
+//ICON_MAIN ICON
+//{
+// '00 00 01 00 02 00 20 20 10 00 00 00 00 00 E8 02'
+// '00 00 26 00 00 00 10 10 10 00 00 00 00 00 28 01'
+// '00 00 0E 03 00 00 28 00 00 00 20 00 00 00 40 00'
+// '00 00 01 00 04 00 00 00 00 00 80 02 00 00 00 00'
+// '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+// '00 00 00 00 80 00 00 80 00 00 00 80 80 00 80 00'
+// '00 00 80 00 80 00 80 80 00 00 80 80 80 00 C0 C0'
+// 'C0 00 00 00 FF 00 00 FF 00 00 00 FF FF 00 FF 00'
+// '00 00 FF 00 FF 00 FF FF 00 00 FF FF FF 00 00 00'
+// '00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 0F 0F 0F 0F 00 00 00 00 00'
+// '00 FF FF FF FF FF FF FF FF FF FF 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 00 00 00 00 00 00 00 00 00'
+// '00 FF FF FF FF FF FF F0 FF FF F0 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 00 FF FF 00 00 00 00 00 00'
+// '00 FF FF FF FF FF FF F0 FF F0 00 00 00 00 00 00'
+// '00 FF 0F 0F 0F 0F 0F 00 FF 00 00 00 00 00 00 00'
+// '00 FF FF FF FF FF FF F0 F0 00 00 00 00 00 00 00'
+// '00 FF FF FF FF FF FF F0 00 00 00 00 00 00 00 00'
+// '00 00 00 00 00 00 00 00 00 00 00 00 00 00 F8 00'
+// '00 1F F8 00 00 1F F8 00 00 1F F8 00 00 1F F8 00'
+// '00 1F F8 00 00 1F F8 00 00 1F F8 00 00 1F F8 00'
+// '00 1F F8 00 00 1F F8 00 00 1F F8 00 00 1F F8 00'
+// '00 1F F8 00 00 1F F8 00 00 1F F8 00 00 1F F8 00'
+// '00 1F F8 00 00 1F F8 00 00 1F F8 00 00 1F F8 00'
+// '00 1F F8 00 00 1F F8 00 00 1F F8 00 00 1F F8 00'
+// '00 1F F8 00 00 3F F8 00 00 7F F8 00 00 FF F8 00'
+// '01 FF F8 00 03 FF F8 00 07 FF F8 00 0F FF 28 00'
+// '00 00 10 00 00 00 20 00 00 00 01 00 04 00 00 00'
+// '00 00 C0 00 00 00 00 00 00 00 00 00 00 00 00 00'
+// '00 00 00 00 00 00 00 00 00 00 00 00 80 00 00 80'
+// '00 00 00 80 80 00 80 00 00 00 80 00 80 00 80 80'
+// '00 00 80 80 80 00 C0 C0 C0 00 00 00 FF 00 00 FF'
+// '00 00 00 FF FF 00 FF 00 00 00 FF 00 FF 00 FF FF'
+// '00 00 FF FF FF 00 00 00 00 00 00 00 00 00 00 0F'
+// 'FF FF FF FF F0 00 00 0F F0 F0 F0 F0 F0 00 00 0F'
+// 'FF FF FF FF F0 00 00 0F F0 F0 F0 F0 F0 00 00 0F'
+// 'FF FF FF FF F0 00 00 0F F0 F0 F0 F0 F0 00 00 0F'
+// 'FF FF FF FF F0 00 00 0F F0 F0 F0 F0 F0 00 00 0F'
+// 'FF FF FF FF F0 00 00 0F F0 F0 F0 F0 F0 00 00 0F'
+// 'FF FF F0 00 00 00 00 0F F0 F0 F0 FF 00 00 00 0F'
+// 'FF FF F0 F0 00 00 00 0F FF FF F0 00 00 00 00 00'
+// '00 00 00 00 00 00 C0 03 00 00 C0 03 00 00 C0 03'
+// '00 00 C0 03 00 00 C0 03 00 00 C0 03 00 00 C0 03'
+// '00 00 C0 03 00 00 C0 03 00 00 C0 03 00 00 C0 03'
+// '00 00 C0 03 00 00 C0 07 00 00 C0 0F 00 00 C0 1F'
+// '00 00 C0 3F 00 00'
+//}
+
+MENU_MAIN MENU
+{
+ POPUP "&File"
+ {
+  MENUITEM "&Print file", M_FILE_PRINT
+  MENUITEM "&Scan file", M_FILE_ACQUIRE
+  MENUITEM SEPARATOR
+  MENUITEM "&Convert to bitmap",M_FILE_SAVEBMP
+  MENUITEM "&Decode from bitmap",M_FILE_OPEN
+  MENUITEM SEPARATOR
+  MENUITEM "Select scanner &interface", M_FILE_SELECT
+  MENUITEM SEPARATOR
+  MENUITEM "Page se&tup", M_FILE_PAGE
+  MENUITEM SEPARATOR
+  MENUITEM "&Exit\tAlt+X", M_FILE_EXIT
+ }
+ POPUP "&Help"
+ {
+  MENUITEM "&About", M_HELP_ABOUT
+ }
+}
+
+
+DIALOG_ABOUT DIALOG 32, 32, 200, 240
+STYLE   WS_VISIBLE | WS_CLIPSIBLINGS | DS_3DLOOK
+CAPTION "About MRPODS"
+FONT 8, "MS Sans Serif"
+{
+ LTEXT "Text", ABOUT_TEXT, 5, 5, 190, 220, WS_BORDER | SS_CENTER
+ DEFPUSHBUTTON "OK", ABOUT_OK, 75, 200, 50, 14
+}
+
+
+DIALOG_OPTIONS DIALOG 32, 32, 255, 140
+STYLE   DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | DS_3DLOOK
+CAPTION "Options"
+FONT 8, "MS Sans Serif"
+{
+ GROUPBOX "Printing", -1, 6, 6, 118, 128, BS_GROUPBOX | WS_GROUP
+ LTEXT "Dot density", -1, 16, 22, 42, 9
+ COMBOBOX OPT_DENSITY, 64, 20, 49, 114, CBS_DROPDOWNLIST | WS_TABSTOP
+ LTEXT "Dot size", -1, 16, 41, 42, 9
+ COMBOBOX OPT_DOTSIZE, 64, 39, 49, 114, CBS_DROPDOWNLIST | WS_TABSTOP
+ LTEXT "Compression", -1, 16, 60, 42, 9
+ COMBOBOX OPT_COMPRESS, 64, 58, 49, 114, CBS_DROPDOWNLIST | WS_TABSTOP
+ LTEXT "Redundancy", -1, 16, 79, 42, 9
+ COMBOBOX OPT_REDUND, 64, 77, 49, 114, CBS_DROPDOWNLIST | WS_TABSTOP
+ CHECKBOX "Header and footer", OPT_HEADER, 16, 97, 90, 12, BS_AUTOCHECKBOX | WS_TABSTOP
+ CHECKBOX "Border around the page", OPT_BORDER, 16, 114, 90, 12, BS_AUTOCHECKBOX | WS_TABSTOP
+ GROUPBOX "Decoding", -1, 131, 6, 118, 51, BS_GROUPBOX | WS_GROUP
+ CHECKBOX "Autosave complete files", OPT_AUTOSAVE, 141, 20, 90, 12, BS_AUTOCHECKBOX | WS_TABSTOP
+ CHECKBOX "Determine best quality", OPT_HIQ, 141, 37, 90, 12, BS_AUTOCHECKBOX | WS_TABSTOP
+ DEFPUSHBUTTON "OK", OPT_OK, 131, 120, 56, 14
+ PUSHBUTTON "Cancel", OPT_CANCEL, 193, 120, 56, 14
+}
